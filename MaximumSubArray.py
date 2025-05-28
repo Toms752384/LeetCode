@@ -23,7 +23,7 @@ class Solution:
 
         # fill the rest of the array using the result of the first value
         max_sum = max(max_sum, sums[0])
-        for i in range(1, n - 1):
+        for i in range(1, n):
             # compute the sum taking the max sum without the element from before
             temp = sums[i - 1] - nums[i - 1]
             if temp == 0:
@@ -31,10 +31,6 @@ class Solution:
             else:
                 sums[i] = sums[i - 1] - nums[i - 1]  
             max_sum = max(max_sum, sums[i])
-
-        # fill the last element with the number from the nums array, and also check for max
-        sums[n - 1] = nums[n - 1]
-        max_sum = max(max_sum, sums[n - 1])
 
         # return the maximum value
         return max_sum
