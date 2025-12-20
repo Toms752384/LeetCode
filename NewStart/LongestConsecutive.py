@@ -7,9 +7,9 @@ class Solution:
         longest = 0
 
         for num in numSet:
-            if (num - 1) not in numSet:
+            if (num - 1) not in numSet: # find a possible start of a sequence 
                 length = 1
-                while (num + length) in numSet:
+                while (num + length) in numSet: # use the set to find the rest of the sequence 
                     length += 1
                 longest = max(length, longest)
         return longest
